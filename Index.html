@@ -1,0 +1,812 @@
+Code For This Layout...
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Psychology Hub</title>
+
+<style>
+:root{
+  --bg:#ffffff;
+  --card:#f7f7f7;
+  --text:#10131a;
+  --muted:#667085;
+  --red:#f21f2f;
+  --border:#e5e7eb;
+}
+
+body.dark{
+  --bg:#070707;
+  --card:#111214;
+  --text:#ffffff;
+  --muted:#a7a7a7;
+  --border:#292929;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:.3s;
+}
+
+.container{
+  width:92%;
+  max-width:1100px;
+  margin:auto;
+}
+
+/* HEADER */
+header{
+  height:65px;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:var(--bg);
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:17px;
+  font-weight:800;
+  line-height:16px;
+}
+
+.logo span{
+  color:var(--red);
+}
+
+.logo small{
+  display:block;
+  font-size:8px;
+  letter-spacing:2px;
+  color:var(--muted);
+}
+
+.menu{
+  display:none;
+}
+
+.actions{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.theme{
+  border:1px solid var(--border);
+  background:var(--card);
+  color:var(--text);
+  border-radius:50%;
+  width:36px;
+  height:36px;
+  cursor:pointer;
+}
+
+.btn{
+  background:var(--red);
+  color:white;
+  border:0;
+  padding:13px 18px;
+  border-radius:10px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  padding:45px 0 30px;
+}
+
+.badge{
+  display:inline-block;
+  color:var(--red);
+  border:1px solid var(--red);
+  padding:7px 12px;
+  border-radius:30px;
+  font-size:11px;
+  font-weight:bold;
+  margin-bottom:18px;
+}
+
+h1{
+  font-size:42px;
+  line-height:1.05;
+  margin-bottom:18px;
+}
+
+.red{
+  color:var(--red);
+}
+
+.hero p{
+  color:var(--muted);
+  line-height:1.6;
+  margin-bottom:22px;
+  max-width:600px;
+}
+
+.hero-img{
+  margin-top:30px;
+  height:360px;
+  border-radius:22px;
+  background:
+    linear-gradient(135deg,#180607,#222),
+    url("");
+  display:flex;
+  align-items:end;
+  justify-content:center;
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+
+.hero-img .person{
+  width:75%;
+  height:85%;
+  border-radius:50% 50% 0 0;
+  background:linear-gradient(145deg,#222,#050505);
+  position:relative;
+}
+
+.person:after{
+  content:"ROYAL";
+  position:absolute;
+  bottom:35px;
+  left:50%;
+  transform:translateX(-50%);
+  color:white;
+  font-size:22px;
+  font-weight:bold;
+}
+
+/* STATS */
+.stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:22px 0;
+  text-align:center;
+}
+
+.stat strong{
+  display:block;
+  font-size:22px;
+}
+
+.stat span{
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* SECTIONS */
+section{
+  padding:55px 0;
+}
+
+.section-title{
+  margin-bottom:28px;
+}
+
+.section-title small{
+  color:var(--red);
+  font-weight:bold;
+  letter-spacing:1.5px;
+}
+
+.section-title h2{
+  font-size:31px;
+  margin-top:8px;
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:22px;
+  border-radius:16px;
+}
+
+.card-icon{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background:#ffe7e9;
+  color:var(--red);
+  margin-bottom:15px;
+}
+
+.card h3{
+  font-size:17px;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
+}
+
+/* PRICING */
+.price{
+  font-size:30px;
+  font-weight:bold;
+  margin:15px 0;
+}
+
+.price small{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.card ul{
+  list-style:none;
+  margin:18px 0;
+}
+
+.card li{
+  margin:10px 0;
+  font-size:13px;
+}
+
+.card li:before{
+  content:"✓";
+  color:var(--red);
+  font-weight:bold;
+  margin-right:8px;
+}
+
+.popular{
+  border:2px solid var(--red);
+  position:relative;
+}
+
+.popular:before{
+  content:"MOST POPULAR";
+  position:absolute;
+  top:-12px;
+  right:18px;
+  background:var(--red);
+  color:white;
+  font-size:9px;
+  padding:6px 10px;
+  border-radius:20px;
+}
+
+/* STEPS */
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.step{
+  text-align:center;
+  padding:20px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:15px;
+}
+
+.number{
+  width:38px;
+  height:38px;
+  border:2px solid var(--red);
+  color:var(--red);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  margin:0 auto 12px;
+  font-weight:bold;
+}
+
+/* TESTIMONIAL */
+.testimonial{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:25px;
+}
+
+.stars{
+  color:var(--red);
+  margin-top:15px;
+}
+
+/* HELP */
+.help{
+  background:linear-gradient(135deg,#fff0f1,var(--card));
+  border:1px solid #ffd0d4;
+  border-radius:20px;
+  padding:30px;
+}
+
+body.dark .help{
+  background:#16090a;
+  border-color:#552024;
+}
+
+/* FOOTER */
+footer{
+  border-top:1px solid var(--border);
+  padding:35px 0;
+  color:var(--muted);
+  font-size:12px;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+  .container{
+    width:90%;
+  }
+
+  header{
+    height:60px;
+  }
+
+  .menu{
+    display:block;
+    font-size:23px;
+  }
+
+  .actions .btn{
+    display:none;
+  }
+
+  h1{
+    font-size:36px;
+  }
+
+  .hero{
+    padding-top:32px;
+  }
+
+  .hero-img{
+    height:300px;
+  }
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+    gap:20px 5px;
+  }
+
+  section{
+    padding:42px 0;
+  }
+
+  .section-title h2{
+    font-size:27px;
+  }
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .card{
+    padding:16px;
+  }
+
+  .card h3{
+    font-size:14px;
+  }
+
+  .card p{
+    font-size:11px;
+  }
+
+  .steps{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .price{
+    font-size:24px;
+  }
+
+}
+
+@media(max-width:430px){
+
+  h1{
+    font-size:32px;
+  }
+
+  .grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .hero-img{
+    height:280px;
+  }
+
+  .stats strong{
+    font-size:19px;
+  }
+
+}
+</style>
+</head>
+
+<body class="dark">
+
+<header>
+<div class="container nav">
+
+  <div class="logo">
+    <span>♛</span> ROYAL<br>
+    <small>PSYCHOLOGY HUB</small>
+  </div>
+
+  <div class="menu">☰</div>
+
+  <div class="actions">
+    <button class="theme" onclick="toggleTheme()">☀</button>
+    <button class="btn">Get Started</button>
+  </div>
+
+</div>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+
+<span class="badge">INSTAGRAM GROWTH & PERSONAL GUIDANCE</span>
+
+<h1>
+Build Your Instagram Page.<br>
+<span class="red">Grow</span> With a Strategy.
+</h1>
+
+<p>
+Step-by-step guidance, proven content strategies and personal
+support to help you start, grow and monetize your Instagram page.
+</p>
+
+<button class="btn">Join the Growth Program →</button>
+
+<div class="hero-img">
+  <div class="person"></div>
+</div>
+
+</div>
+</section>
+
+
+<!-- STATS -->
+<div class="container">
+<div class="stats">
+
+<div class="stat">
+<strong>42K+</strong>
+<span>Instagram Followers</span>
+</div>
+
+<div class="stat">
+<strong>10M+</strong>
+<span>Total Reach</span>
+</div>
+
+<div class="stat">
+<strong>100+</strong>
+<span>Happy Creators</span>
+</div>
+
+<div class="stat">
+<strong>95%</strong>
+<span>Satisfaction</span>
+</div>
+
+</div>
+</div>
+
+
+<!-- WHY -->
+<section>
+<div class="container">
+
+<div class="section-title">
+<small>WHY ROYAL PSYCHOLOGY HUB</small>
+<h2>More Than Just Growth Tips —<br>
+It's a Real <span class="red">Guidance.</span></h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-icon">🎯</div>
+<h3>Real Strategies</h3>
+<p>Practical strategies designed for creators.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">👤</div>
+<h3>Personal Support</h3>
+<p>Direct guidance for your Instagram journey.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">🚀</div>
+<h3>Step-by-Step Plan</h3>
+<p>Clear roadmap to build and grow your page.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">👥</div>
+<h3>Creator Community</h3>
+<p>Learn, connect and grow with other creators.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- SERVICES -->
+<section>
+<div class="container">
+
+<div class="section-title">
+<small>OUR SERVICES</small>
+<h2>Everything You Need to<br>
+Grow on <span class="red">Instagram</span></h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="card-icon">◎</div>
+<h3>Page Setup</h3>
+<p>Build a professional Instagram profile.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">◉</div>
+<h3>Profile Optimization</h3>
+<p>Make your profile attractive and clear.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">▣</div>
+<h3>Content Strategy</h3>
+<p>Plan content that creates engagement.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">▶</div>
+<h3>Reels Strategy</h3>
+<p>Learn how to create better performing reels.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">↗</div>
+<h3>Growth Strategy</h3>
+<p>Follow a structured growth system.</p>
+</div>
+
+<div class="card">
+<div class="card-icon">₹</div>
+<h3>Monetization</h3>
+<p>Understand ways to monetize your audience.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- PLANS -->
+<section>
+<div class="container">
+
+<div class="section-title">
+<small>OUR PLANS</small>
+<h2>Choose Your <span class="red">Growth Plan</span></h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Starter</h3>
+<p>Perfect for beginners.</p>
+<div class="price">₹999 <small>/ plan</small></div>
+
+<ul>
+<li>Growth Roadmap</li>
+<li>Content Strategy</li>
+<li>Basic Resources</li>
+<li>Community Access</li>
+</ul>
+
+<button class="btn">Get Started</button>
+</div>
+
+
+<div class="card popular">
+<h3>Growth</h3>
+<p>For serious creators.</p>
+<div class="price">₹1,999 <small>/ plan</small></div>
+
+<ul>
+<li>Complete Growth Strategy</li>
+<li>Profile Optimization</li>
+<li>Templates & Resources</li>
+<li>Priority Support</li>
+</ul>
+
+<button class="btn">Get Started</button>
+</div>
+
+
+<div class="card">
+<h3>VIP</h3>
+<p>1-on-1 personal guidance.</p>
+<div class="price">₹4,999 <small>/ plan</small></div>
+
+<ul>
+<li>Everything in Growth</li>
+<li>1-on-1 Guidance</li>
+<li>Custom Content Plan</li>
+<li>Direct Support</li>
+</ul>
+
+<button class="btn">Get Started</button>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- HOW IT WORKS -->
+<section>
+<div class="container">
+
+<div class="section-title">
+<small>HOW IT WORKS</small>
+<h2>Simple Steps to Your<br>
+<span class="red">Instagram Success</span></h2>
+</div>
+
+<div class="steps">
+
+<div class="step">
+<div class="number">1</div>
+<h3>Fill the Form</h3>
+<p>Share your goals.</p>
+</div>
+
+<div class="step">
+<div class="number">2</div>
+<h3>Choose a Plan</h3>
+<p>Select your program.</p>
+</div>
+
+<div class="step">
+<div class="number">3</div>
+<h3>Make Payment</h3>
+<p>Secure online payment.</p>
+</div>
+
+<div class="step">
+<div class="number">4</div>
+<h3>Get Access</h3>
+<p>Enter your dashboard.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+
+<!-- TESTIMONIAL -->
+<section>
+<div class="container">
+
+<div class="section-title">
+<small>REAL STORIES</small>
+<h2>What Our Members Say</h2>
+</div>
+
+<div class="testimonial">
+<h3>Aarav Sharma</h3>
+<p>
+“The guidance helped me understand what I was doing wrong
+and gave me a clear strategy for my page.”
+</p>
+<div class="stars">★★★★★</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- HELP CENTER -->
+<section>
+<div class="container">
+
+<div class="help">
+
+<small class="red">FREE HELP CENTER</small>
+
+<h2>Need Help Before Joining?</h2>
+
+<p style="margin:15px 0;color:var(--muted);">
+Get answers to common questions, free resources and
+basic Instagram growth guidance before you join.
+</p>
+
+<button class="btn">Visit Help Center →</button>
+
+</div>
+</div>
+</section>
+
+</main>
+
+
+<footer>
+<div class="container">
+
+<h2>♛ ROYAL PSYCHOLOGY HUB</h2>
+
+<p style="margin-top:10px;">
+Instagram Growth • Personal Guidance • Creator Resources
+</p>
+
+<p style="margin-top:20px;">
+© 2026 Royal Psychology Hub. All rights reserved.
+</p>
+
+</div>
+</footer>
+
+
+<script>
+
+function toggleTheme(){
+
+  document.body.classList.toggle("dark");
+
+  const button=document.querySelector(".theme");
+
+  if(document.body.classList.contains("dark")){
+    button.innerHTML="☀";
+  }else{
+    button.innerHTML="☾";
+  }
+
+}
+
+</script>
+
+</body>
+</html>
